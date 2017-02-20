@@ -20,7 +20,7 @@ module.exports = {
 			{
 				test: /\.md$/,
 				exclude: /node_modules/,
-				loader: `babel-loader?${babelQuery}!markdown-loader`,
+				loader: `markdown-loader`,
 			},
 			{
 				test: /\.js$/,
@@ -28,5 +28,8 @@ module.exports = {
 				loader: `babel-loader?${babelQuery}`,
 			}
 		]
-	}
+	},
+	externals: [{
+		react: true,
+	}]
 };

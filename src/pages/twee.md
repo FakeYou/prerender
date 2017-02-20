@@ -1,5 +1,5 @@
 ---
-title: Mijn eerst artikel
+title: artikel twee
 ---
 
 hello world, dit is mijn artikel.

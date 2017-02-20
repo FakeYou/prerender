@@ -1,6 +1,16 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+const requirePage = require.context('./pages', true, /.md$/);
 
-import Article from './pages/article.md';
+const pages = {};
 
-console.log(ReactDOMServer.renderToString(<Article />));
+requirePage.keys().forEach(name => {
+	const Page = requirePage(name).default;
+
+	console.log(Page);
+
+	pages[Page.path()] = {
+		path: Page.path(),
+		screen: Page,
+	};
+});
+
+console.log(pages);
